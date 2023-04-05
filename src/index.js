@@ -3,26 +3,27 @@ const fs = require('fs/promises')
 const myFileWriter = async (fileName, fileContent) => {
 	// write code here
 	// dont chnage function name
-	fs.writeFileSync(fileName, fileContent);
+	fs.writeFile(fileName, fileContent);
 }
 
 const myFileReader = async (fileName) => {
 	// write code here
 	// dont chnage function name
-	 return fs.readFileSync(fileName, 'utf-8');
+	 const data=await fs.readFile(fileName, 'utf-8');
+	return data;
 }
 
 
 const myFileUpdater = async (fileName, fileContent) => {
 	// write code here
 	// dont chnage function name
-	fs.appendFileSync(fileName, fileContent);
+	fs.appendFile(fileName, fileContent);
 }
 
 const myFileDeleter = async (fileName) => {
 	// write code here
 	// dont chnage function name
-	  fs.unlinkSync(fileName);
+	  fs.unlink(fileName);
 }
 
 
